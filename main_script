@@ -1,0 +1,26 @@
+from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC 
+from selenium.webdriver.common.by import By
+from datetime import date
+from datetime import timedelta
+import time
+import datetime
+while(1):
+    if(datetime.datetime.now().hour==21 and datetime.datetime.now().minute==15): #Choose time when to book the slot
+        driver=webdriver.Chrome("C:/Users/Jeshwanth/Downloads/chromedriver")
+        driver.get("https://community.toppr.com")
+        time.sleep(5)
+        #Find each element in process to book the slot 
+        driver.find_element_by_xpath("//*[@class='elements__LoginButton-agxD hcUsRp']").click()
+        driver.find_element_by_name("email").send_keys("sandtvr@gmail.com")
+        driver.find_element_by_name("password").send_keys("jaysan31")
+        driver.find_element_by_xpath("//*[@class='elements__LoginButton-agxD cmwqFd elements__ApplyButton-hDYgIi hYcGev Button-kDSBcD fmGrzg']").click()
+        time.sleep(10)
+        #driver.find_element_by_xpath("//*[@class='_1sTD0']").click()
+        driver.get("https://community.toppr.com/doubts/slots/")
+        time.sleep(5)
+        driver.find_element_by_id(str(date.today()+timedelta(days=3))).click()
+        time.sleep(5)
+        driver.find_element_by_xpath(".//div[contains(@class, '_2sO6F')][5]").click()
+        driver.find_element_by_xpath("//*[@class='wGytW sc-htpNat cPKwvO']").click()
+        break
