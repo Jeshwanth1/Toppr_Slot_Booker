@@ -13,7 +13,7 @@ while(1):
         #Find each element in process to book the slot 
         driver.find_element_by_xpath("//*[@class='elements__LoginButton-agxD hcUsRp']").click()
         driver.find_element_by_name("email").send_keys("sandtvr@gmail.com")
-        driver.find_element_by_name("password").send_keys("jaysan31")
+        driver.find_element_by_name("password").send_keys("*******")
         driver.find_element_by_xpath("//*[@class='elements__LoginButton-agxD cmwqFd elements__ApplyButton-hDYgIi hYcGev Button-kDSBcD fmGrzg']").click()
         time.sleep(10)
         #driver.find_element_by_xpath("//*[@class='_1sTD0']").click()
